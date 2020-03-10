@@ -9,6 +9,6 @@ package pract3;
  *
  * @author niko
  */
-public class DecSA {
+public class DecSA extends Envio{
     
 }

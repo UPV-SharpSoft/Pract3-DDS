@@ -9,6 +9,13 @@ package pract3;
  *
  * @author niko
  */
-public class Carta extends Envio{
+public class Carta implements Envio{
+    
+    public Carta(){}
+
+    @Override
+    public double getPrecio() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

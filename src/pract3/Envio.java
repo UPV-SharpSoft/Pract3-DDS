@@ -9,6 +9,6 @@ package pract3;
  *
  * @author Marcos
  */
-public class Envio {
-    
+public interface Envio {
+    public double getPrecio();
 }

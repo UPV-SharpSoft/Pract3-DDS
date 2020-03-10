@@ -9,13 +9,17 @@ package pract3;
  *
  * @author niko
  */
-public class Carta implements Envio{
+public class Carta implements Envio {
+    private double peso;
+    private final double precioPorGramo = 0.01;
     
-    public Carta(){}
+    public Carta(double peso){
+        this.peso = peso;
+    }
 
     @Override
     public double getPrecio() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return peso * precioPorGramo;
     }
     
 }

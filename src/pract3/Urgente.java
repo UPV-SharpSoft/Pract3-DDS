@@ -11,4 +11,13 @@ package pract3;
  */
 public class Urgente extends DecSA{
     
+    public Urgente(Envio envio) {
+        super(envio);
+    }
+    
+    @Override
+    public double getPrecio(){
+        return -1.0;
+    }
+    
 }

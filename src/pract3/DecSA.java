@@ -9,6 +9,16 @@ package pract3;
  *
  * @author niko
  */
-public interface DecSA extends Envio{
+public abstract class DecSA implements Envio{
+    private Envio envio;
+    
+    public DecSA(Envio envio){
+        this.envio = envio;
+    }
+
+    @Override
+    public double getPrecio() {
+        return this.envio.getPrecio();
+    }
     
 }

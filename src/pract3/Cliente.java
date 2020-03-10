@@ -10,5 +10,4 @@ package pract3;
  * @author Marcos
  */
 public class Cliente {
-    
 }

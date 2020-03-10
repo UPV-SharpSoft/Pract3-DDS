@@ -9,10 +9,12 @@ package pract3;
  *
  * @author niko
  */
-public class Fragil extends DecSA{
-    
-    public Fragil(Envio envio) {
-        super(envio);
+public class Main {
+    public static void main(String[] args){        
+        Envio carta = new Urgente(new Carta(2.5));
+        System.out.println(carta.getPrecio());
+        
+        
+        
     }
-    
 }

@@ -11,4 +11,8 @@ package pract3;
  */
 public class AR extends DecSA{
     
+    public AR(Envio envio) {
+        super(envio);
+    }
+    
 }

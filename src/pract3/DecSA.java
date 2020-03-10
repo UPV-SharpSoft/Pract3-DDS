@@ -9,6 +9,7 @@ package pract3;
  *
  * @author niko
  */
-public interface DecSA extends Envio{
+public abstract class DecSA extends Envio{
     
+    public abstract double getCost();
 }

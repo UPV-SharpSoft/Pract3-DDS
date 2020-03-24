@@ -11,17 +11,16 @@ package pract3;
  */
 public class P extends Envio{
     
-    private final double precioPorGramo = 0.02;
+    //private final double precioPorGramo = 0.02;
 
-    public P(String dir, String codPostal, double peso) {
-        this.dir = dir;
-        this.codPostal = codPostal;
+    public P(double peso) {
         this.peso = peso;
     }
 
     @Override
     public double calcularCoste() {
-        return peso * precioPorGramo;
+        //return peso * precioPorGramo;
+        return peso * estrategia.calcularCoste();
     }
     
 }

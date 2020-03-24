@@ -10,6 +10,15 @@ package pract3;
  * @author niko
  */
 public abstract class DecSA extends Envio{
-    Envio envio;
+    private Envio envio;
+    
+    public DecSA(Envio envio){
+        this.envio = envio;
+    }
+    
+    @Override
+    public double calcularCoste(){
+        return envio.calcularCoste();
+    }
 }
 

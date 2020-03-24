@@ -12,11 +12,16 @@ import java.util.Scanner;
  * @author niko
  */
 public class Main {
+    
 
     public static void main(String[] args) {
-        String nombreCliente, dirCliente, codPostalCliente, telefonoCliente;
+        String nombreCliente, dirCliente, codPostalCliente;
+        int telefonoCliente;
         String dirEnvio, codPostalEnvio;
         Double pesoEnvio;
+        Cliente cliente;
+        Envio envio;
+        EnvioFactory factory;
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Introducir datos del cliente.");
@@ -31,7 +36,7 @@ public class Main {
         codPostalCliente = sc.nextLine();
 
         System.out.println("Introduce tu teléfono:");
-        telefonoCliente = sc.nextLine();
+        telefonoCliente = sc.nextInt();
 
         System.out.println("Introducir datos del envío.");
 
@@ -43,6 +48,12 @@ public class Main {
 
         System.out.println("Introduce el peso del envío en gramos: ");
         pesoEnvio = sc.nextDouble();
+        
+        cliente = new Cliente(nombreCliente, dirCliente, codPostalCliente, telefonoCliente);
+        factory = new EnvioFactory();
+        envio = factory.crearEnvio(pesoEnvio);
+        envio.setCodPostal(codPostalEnvio);
+        envio.setDir(dirEnvio);
 
     }
 }

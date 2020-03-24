@@ -12,12 +12,12 @@ package pract3;
 public class Urgente extends DecSA{
     
     public Urgente(Envio envio) {
-        this.envio = envio;
+        super(envio);
     }
     
     @Override
     public double calcularCoste(){
-        return 2.0 + envio.calcularCoste();
+        return 2.0 + super.calcularCoste();
     }
     
 }

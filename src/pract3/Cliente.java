@@ -12,10 +12,18 @@ package pract3;
 public class Cliente {
     private String nombre;
     private String direccion;
-    private int codPostal;
+    private String codPostal;
     private int telefono;
-    
+
+    public Cliente(String nombre, String direccion, String codPostal, int telefono) {
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.codPostal = codPostal;
+        this.telefono = telefono;
+    }
+
     public String enviar(){
-        return "";
+        return "Cliente: " + nombre + ". Direccion: " + direccion + ". "
+                + "Código postal: " + codPostal + ". Telefono: " + telefono + ".\n";
     }
 }

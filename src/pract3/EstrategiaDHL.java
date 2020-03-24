@@ -7,17 +7,11 @@ package pract3;
 
 /**
  *
- * @author niko
+ * @author Marcos
  */
-public class AR extends DecSA{
-    
-    public AR(Envio envio) {
-        super(envio);
-    }
-    
+public class EstrategiaDHL implements EstrategiaEnvio{
     @Override
     public double calcularCoste(){
-        return 2.5 + super.calcularCoste();
+        
     }
-    
 }

@@ -20,6 +20,6 @@ public class Carta extends Envio {
     @Override
     public double calcularCoste() {
         //return peso * precioPorGramo;
-        return peso * estrategia.calcularCoste();
+        return peso * estrategia.calcularCoste('c');
     }
 }

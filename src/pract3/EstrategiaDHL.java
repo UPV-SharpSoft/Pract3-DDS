@@ -11,7 +11,17 @@ package pract3;
  */
 public class EstrategiaDHL implements EstrategiaEnvio{
     @Override
-    public double calcularCoste(){
-        
+    public double calcularCoste(char tipo){
+        switch(tipo){
+            case 'c': 
+                return 0.01;
+            case 'p':
+                return 0.02;
+            case 'g': 
+                return 0.025;
+                
+            default:
+                return 0.0;
+        }
     }
 }

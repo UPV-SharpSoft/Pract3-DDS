@@ -10,4 +10,12 @@ package pract3;
  * @author Marcos
  */
 public class Cliente {
+    private String nombre;
+    private String direccion;
+    private int codPostal;
+    private int telefono;
+    
+    public String enviar(){
+        return "";
+    }
 }

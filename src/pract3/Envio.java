@@ -10,8 +10,12 @@ package pract3;
  * @author Marcos
  */
 public abstract class Envio {
-    public abstract double getPrecio();
-    public String dir;
-    public String cod;
-    public double peso;
+
+    static int id;
+    String dir;
+    String codPostal;
+    double peso;
+
+    public abstract double calcularCoste();
+
 }

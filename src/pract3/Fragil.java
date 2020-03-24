@@ -12,7 +12,11 @@ package pract3;
 public class Fragil extends DecSA{
     
     public Fragil(Envio envio) {
-        super(envio);
+        this.envio = envio;
     }
     
+    @Override
+    public double calcularCoste(){
+        return 3.0 + envio.calcularCoste();
+    }
 }

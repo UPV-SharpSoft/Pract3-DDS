@@ -9,11 +9,19 @@ package pract3;
  *
  * @author Marcos
  */
-public class GV implements Envio{
+public class GV extends Envio{
+    
+    private final double precioPorGramo = 0.025;
+    
+    public GV(String dir, String codPostal, double peso) {
+        this.dir = dir;
+        this.codPostal = codPostal;
+        this.peso = peso;
+    }
 
     @Override
-    public double getPrecio() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public double calcularCoste() {
+        return peso * precioPorGramo;
     }
     
 }

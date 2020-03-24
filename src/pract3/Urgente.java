@@ -7,17 +7,17 @@ package pract3;
 
 /**
  *
- * @author niko
+ * @author markettes
  */
 public class Urgente extends DecSA{
     
     public Urgente(Envio envio) {
-        super(envio);
+        this.envio = envio;
     }
     
     @Override
-    public double getPrecio(){
-        return -1.0;
+    public double calcularCoste(){
+        return 2.0 + envio.calcularCoste();
     }
     
 }

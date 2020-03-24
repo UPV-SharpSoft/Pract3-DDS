@@ -9,17 +9,17 @@ package pract3;
  *
  * @author niko
  */
-public class Carta implements Envio {
-    private double peso;
+public class Carta extends Envio {
     private final double precioPorGramo = 0.01;
-    
-    public Carta(double peso){
+
+    public Carta(String dir, String codPostal, double peso) {
+        this.dir = dir;
+        this.codPostal = codPostal;
         this.peso = peso;
     }
 
     @Override
-    public double getPrecio() {
+    public double calcularCoste() {
         return peso * precioPorGramo;
     }
-    
 }

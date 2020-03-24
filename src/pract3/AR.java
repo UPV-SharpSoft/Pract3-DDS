@@ -12,7 +12,12 @@ package pract3;
 public class AR extends DecSA{
     
     public AR(Envio envio) {
-        super(envio);
+        this.envio = envio;
+    }
+    
+    @Override
+    public double calcularCoste(){
+        return 2.5 + envio.calcularCoste();
     }
     
 }

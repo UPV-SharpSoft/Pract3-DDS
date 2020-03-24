@@ -33,7 +33,11 @@ public abstract class Envio {
                 estrategia = new EstrategiaCorreos();
         }else{
             if(codPostal.startsWith("25")||codPostal.startsWith("08")||codPostal.startsWith("17")||codPostal.startsWith("43")
-                    ||)
+                    ||codPostal.startsWith("12")||codPostal.startsWith("46")||codPostal.startsWith("03")||codPostal.startsWith("30")){
+                estrategia = new EstrategiaDHL();
+            }else{
+                estrategia = new EstrategiaSEUR();
+            }
         }
     }
 }

@@ -14,6 +14,7 @@ public class Cliente {
     private String direccion;
     private String codPostal;
     private int telefono;
+    private Envio envio;
 
     public Cliente(String nombre, String direccion, String codPostal, int telefono) {
         this.nombre = nombre;
@@ -22,8 +23,19 @@ public class Cliente {
         this.telefono = telefono;
     }
 
+    public void setEnvio(Envio envio) {
+        this.envio = envio;
+    }
+
+    public Envio getEnvio() {
+        return envio;
+    }
+
     public String enviar(){
         return "Cliente: " + nombre + ". Direccion: " + direccion + ". "
-                + "Código postal: " + codPostal + ". Telefono: " + telefono + ".\n";
+                + "Código postal: " + codPostal + ". Telefono: " + telefono + ".\n"
+                + "Peso paquete: " + envio.peso + ". Dirección de envio: " + envio.dir + ". "
+                + "Código postal: " + envio.codPostal + ".\n Coste del envio: " + envio.calcularCoste() + "."
+                + " Debe enviarlo en la oficina de " + envio.estrategia.toString() + ".";
     }
 }

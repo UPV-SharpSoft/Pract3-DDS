@@ -24,4 +24,10 @@ public class EstrategiaSEUR implements EstrategiaEnvio{
                 return 0.0;
         }
     }
+
+    @Override
+    public String toString() {
+        return "SEUR";
+    }
+    
 }

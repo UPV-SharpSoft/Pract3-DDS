@@ -24,4 +24,11 @@ public class EstrategiaCorreos implements EstrategiaEnvio{
                 return 0.0;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Correos";
+    }
+    
+    
 }

@@ -56,6 +56,7 @@ public class Main {
         envio = factory.crearEnvio(pesoEnvio);
         envio.setCodPostal(codPostalEnvio);
         envio.setDir(dirEnvio);
+        cliente.setEnvio(envio);
         System.out.println(envio.calcularCoste());
         Envio envio2 = new Fragil(envio);
         System.out.println(envio2.calcularCoste());

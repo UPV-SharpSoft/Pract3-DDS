@@ -25,6 +25,7 @@ public abstract class Envio {
 
     public void setCodPostal(String codPostal) {
         this.codPostal = codPostal;
+        elegirEstrategia();
     }
     
     public void elegirEstrategia(){

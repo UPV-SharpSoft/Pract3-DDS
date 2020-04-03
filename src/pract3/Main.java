@@ -37,6 +37,8 @@ public class Main {
 
         System.out.println("Introduce tu teléfono:");
         telefonoCliente = sc.nextInt();
+        
+        sc.nextLine();
 
         System.out.println("Introducir datos del envío.");
 
@@ -54,6 +56,9 @@ public class Main {
         envio = factory.crearEnvio(pesoEnvio);
         envio.setCodPostal(codPostalEnvio);
         envio.setDir(dirEnvio);
+        System.out.println(envio.calcularCoste());
+        Envio envio2 = new Fragil(envio);
+        System.out.println(envio2.calcularCoste());
 
     }
 }

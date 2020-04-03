@@ -9,51 +9,57 @@ import java.util.Scanner;
 
 /**
  *
- * @author niko
+ * @author ngnic
  */
 public class Main {
+    static Scanner sc;
     
-
-    public static void main(String[] args) {
-        String nombreCliente, dirCliente, codPostalCliente;
-        int telefonoCliente;
-        String dirEnvio, codPostalEnvio;
-        Double pesoEnvio;
-        Cliente cliente;
-        Envio envio;
-        EnvioFactory factory;
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Introducir datos del cliente.");
-
-        System.out.println("Introduce tu nombre:");
-        nombreCliente = sc.nextLine();
-
-        System.out.println("Introduce tu dirección:");
-        dirCliente = sc.nextLine();
-
-        System.out.println("Introduce tu código postal:");
-        codPostalCliente = sc.nextLine();
-
-        System.out.println("Introduce tu teléfono:");
-        telefonoCliente = sc.nextInt();
-
-        System.out.println("Introducir datos del envío.");
-
-        System.out.println("Introduce la dirección de destino: ");
-        dirEnvio = sc.nextLine();
-
-        System.out.println("Introduce el código postal destino: ");
-        codPostalEnvio = sc.nextLine();
-
-        System.out.println("Introduce el peso del envío en gramos: ");
-        pesoEnvio = sc.nextDouble();
+    public static void main(String[] args){
+        sc = new Scanner(System.in);
         
-        cliente = new Cliente(nombreCliente, dirCliente, codPostalCliente, telefonoCliente);
-        factory = new EnvioFactory();
-        envio = factory.crearEnvio(pesoEnvio);
-        envio.setCodPostal(codPostalEnvio);
-        envio.setDir(dirEnvio);
-
+        Envio envio;
+        
+        double peso = getDouble("Peso del envio(gramos)");
+        envio = EnvioFactory.getEnvio(peso);
+        
+        if(getBool("Es urgente")){
+            envio = new Urgente(envio);
+        }
+        if(getBool("Tiene acuese de recibo")){
+            envio = new AcuseRecibo(envio);
+        }
+        if(getBool("Es fragil")){
+            envio = new Fragil(envio);
+        }
+        
+        double precio = envio.getPrecio();
+        System.out.println(envio.toString());
+        System.out.println("Precio: " + precio);
+    }
+    
+    private static double getDouble(String mensaje){
+        double res;
+        System.out.println(mensaje + ":");
+        String aux = sc.nextLine();
+        try{
+            res = Double.valueOf(aux);
+        }catch(NumberFormatException e){
+            System.out.println("Inválido");
+            return getDouble(mensaje);
+        }
+        return res;
+    }
+    
+    private static boolean getBool(String mensaje){
+        System.out.println(mensaje + "?(si/no):");
+        String aux = sc.nextLine();
+        if(aux.equalsIgnoreCase("si")){
+            return true;
+        }else if(aux.equalsIgnoreCase("no")){
+            return false;
+        }else{
+            System.out.println("Inválido");
+            return getBool(mensaje);
+        }
     }
 }

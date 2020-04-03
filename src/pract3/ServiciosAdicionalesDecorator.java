@@ -7,18 +7,21 @@ package pract3;
 
 /**
  *
- * @author niko
+ * @author ngnic
  */
-public abstract class DecSA extends Envio{
+public class ServiciosAdicionalesDecorator implements Envio{
     private Envio envio;
     
-    public DecSA(Envio envio){
+    public ServiciosAdicionalesDecorator(Envio envio){
         this.envio = envio;
     }
-    
+
     @Override
-    public double calcularCoste(){
-        return envio.calcularCoste();
+    public double getPrecio() {
+        return this.envio.getPrecio();
+    }
+    
+    public String toString(){
+        return this.envio.toString();
     }
 }
-

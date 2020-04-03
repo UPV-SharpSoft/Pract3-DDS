@@ -7,16 +7,19 @@ package pract3;
 
 /**
  *
- * @author niko
+ * @author ngnic
  */
-public class Fragil extends DecSA{
+public class Fragil extends ServiciosAdicionalesDecorator{
     
     public Fragil(Envio envio) {
         super(envio);
     }
     
-    @Override
-    public double calcularCoste(){
-        return 3.0 + super.calcularCoste();
+    public double getPrecio(){
+        return 3 + super.getPrecio();
+    }
+    
+    public String toString(){
+        return super.toString() + " Frágil";
     }
 }

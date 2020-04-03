@@ -9,17 +9,18 @@ package pract3;
  *
  * @author ngnic
  */
-public class Urgente extends ServiciosAdicionalesDecorator {
-
-    public Urgente(Envio envio) {
+public class AcuseRecibo extends ServiciosAdicionalesDecorator{
+    
+    public AcuseRecibo(Envio envio) {
         super(envio);
     }
-
-    public double getPrecio() {
-        return 2 + super.getPrecio();
+    
+    public double getPrecio(){
+        return 2.5 + super.getPrecio();
     }
     
     public String toString(){
-        return super.toString() + " Urgente";
+        return super.toString() + " con acuse de recibo";
     }
+    
 }

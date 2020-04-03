@@ -7,20 +7,21 @@ package pract3;
 
 /**
  *
- * @author Marcos
+ * @author ngnic
  */
-public class GV extends Envio{
+public class GranVolumen implements Envio{
+    double peso;
     
-    //private final double precioPorGramo = 0.025;
-    
-    public GV(double peso) {
+    public GranVolumen(double peso){
         this.peso = peso;
     }
-    
-    @Override
-    public double calcularCoste() {
-        //return peso * precioPorGramo;
-        return peso * estrategia.calcularCoste('g');
-    }
 
+    @Override
+    public double getPrecio() {
+        return 0.025 * peso;
+    }
+    
+    public String toString(){
+        return peso + "g (Gran Volumen)";
+    }
 }

@@ -7,20 +7,22 @@ package pract3;
 
 /**
  *
- * @author Marcos
+ * @author ngnic
  */
-public class P extends Envio{
+public class Paquete implements Envio{
+    double peso;
     
-    //private final double precioPorGramo = 0.02;
-
-    public P(double peso) {
+    public Paquete(double peso){
         this.peso = peso;
     }
 
     @Override
-    public double calcularCoste() {
-        //return peso * precioPorGramo;
-        return peso * estrategia.calcularCoste('p');
+    public double getPrecio() {
+        return 0.02 * this.peso;
+    }
+    
+    public String toString(){
+        return peso + "g (Paquete)";
     }
     
 }

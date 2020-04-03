@@ -7,8 +7,10 @@ package pract3;
 
 /**
  *
- * @author Marcos
+ * @author ngnic
  */
-public interface EstrategiaEnvio {
-    public double calcularCoste(char tipo);
+public interface EnvioStrategy {
+    
+    public double getPrecio();
+    
 }

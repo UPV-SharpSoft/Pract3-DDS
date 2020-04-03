@@ -7,17 +7,13 @@ package pract3;
 
 /**
  *
- * @author niko
+ * @author ngnic
  */
-public class AR extends DecSA{
-    
-    public AR(Envio envio) {
-        super(envio);
-    }
-    
+public class Correos implements EnvioStrategy{
+
     @Override
-    public double calcularCoste(){
-        return 2.5 + super.calcularCoste();
+    public double getPrecio() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

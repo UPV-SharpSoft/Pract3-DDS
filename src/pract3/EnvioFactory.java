@@ -7,21 +7,17 @@ package pract3;
 
 /**
  *
- * @author Marcos
+ * @author ngnic
  */
 public class EnvioFactory {
-    public Envio crearEnvio(double peso){
-        if(peso > 0 && peso <= 100){
+    public static Envio getEnvio(double peso){
+        if(peso <= 0){ throw new IllegalArgumentException("El peso no puede ser <= 0"); }
+        else if(peso > 0 && peso <= 100){
             return new Carta(peso);
+        }else if(peso > 100 && peso <= 2000){
+            return new Paquete(peso);
         }else{
-            if(peso > 100 && peso <= 2000){
-                return new P(peso);
-            }else{
-                if(peso > 2000){
-                    return new GV(peso);
-                }
-            }
+            return new GranVolumen(peso);
         }
-        return null;
     }
 }

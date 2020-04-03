@@ -11,7 +11,17 @@ package pract3;
  */
 public class EstrategiaCorreos implements EstrategiaEnvio{    
     @Override
-    public double calcularCoste(){
-        
+    public double calcularCoste(char tipo){
+        switch(tipo){
+            case 'c': 
+                return 0.015;
+            case 'p':
+                return 0.03;
+            case 'g': 
+                return 0.035;
+                
+            default:
+                return 0.0;
+        }
     }
 }

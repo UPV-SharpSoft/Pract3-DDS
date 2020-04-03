@@ -10,5 +10,5 @@ package pract3;
  * @author Marcos
  */
 public interface EstrategiaEnvio {
-    public double calcularCoste();
+    public double calcularCoste(char tipo);
 }
